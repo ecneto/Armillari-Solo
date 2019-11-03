@@ -1,4 +1,4 @@
-package com.armillari.player;
+package com.armillari.solo.player;
 
 public class Player {
     String name;

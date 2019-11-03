@@ -1,4 +1,4 @@
-package com.armillari.http;
+package com.armillari.solo.http;
 
 import java.io.*;
 import java.net.*;

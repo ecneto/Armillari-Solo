@@ -1,8 +1,8 @@
-package com.armillari;
+package com.armillari.solo;
 
-import com.armillari.grid.Grid;
-import com.armillari.player.Player;
-import com.armillari.player.PlayerFactory;
+import com.armillari.solo.grid.Grid;
+import com.armillari.solo.player.Player;
+import com.armillari.solo.player.PlayerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +21,13 @@ public class Game {
     }
 
     public void start() {
-        Player player1 = PlayerFactory.makePlayer();
-        Player player2 = PlayerFactory.makePlayer();
-        addPlayer(player1);
-        addPlayer(player2);
+        try {
+            addPlayers(3);
+        } catch (Exception e) {
+            System.out.println("Failed to generate users. Exiting game. ");
+            System.out.println(e.getMessage());
+            return;
+        }
 
         enterGameLoop();
 
@@ -58,7 +61,8 @@ public class Game {
         return false;
     }
 
-    private void addPlayer(Player player) {
-        players.add(player);
+    private void addPlayers(int numPlayers) throws Exception {
+        List<Player> players = PlayerFactory.makePlayers(numPlayers);
+        players.addAll(players);
     }
 }

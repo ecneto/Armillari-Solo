@@ -1,4 +1,4 @@
-package com.armillari.grid;
+package com.armillari.solo.grid;
 
 public class Grid {
     final static String CENTRAL_TERRAIN = "Green";

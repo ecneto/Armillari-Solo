@@ -1,0 +1,6 @@
+# Build
+out/*
+
+# Idea
+.idea/*
+*.iml

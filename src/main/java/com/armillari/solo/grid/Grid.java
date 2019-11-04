@@ -7,4 +7,8 @@ public class Grid {
     public Grid() {
         centralTile = new Tile(CENTRAL_TERRAIN);
     }
+
+    public Tile getStartTile() {
+        return this.centralTile ;
+    }
 }

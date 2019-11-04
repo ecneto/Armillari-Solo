@@ -18,9 +18,4 @@ public class HttpReader {
         rd.close();
         return result.toString();
     }
-
-    public static void main(String[] args) throws Exception
-    {
-        System.out.println(getHTML(args[0]));
-    }
 }

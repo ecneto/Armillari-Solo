@@ -1,5 +1,6 @@
 package com.armillari.solo;
 
+import com.armillari.solo.view.MapReport;
 import com.armillari.solo.view.ScoreReport;
 import com.armillari.solo.game.actions.ActionProcessor;
 import com.armillari.solo.game.GameState;
@@ -18,6 +19,8 @@ public class Game {
 
     public void start() {
         gameState = new GameState();
+
+        MapReport.show(gameState);
 
         enterGameLoop();
 
@@ -39,6 +42,8 @@ public class Game {
             // Close input period, and block input until actions process.
             ActionProcessor processor = new ActionProcessor(gameState);
             processor.processActions(input);
+
+            MapReport.show(gameState);
 
             turnCounter++;
         }

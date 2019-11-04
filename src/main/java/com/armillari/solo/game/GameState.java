@@ -2,6 +2,7 @@ package com.armillari.solo.game;
 
 import com.armillari.solo.grid.Grid;
 import com.armillari.solo.grid.Tile;
+import com.armillari.solo.grid.TileFactory;
 import com.armillari.solo.player.Player;
 import com.armillari.solo.player.PlayerFactory;
 
@@ -20,10 +21,11 @@ public class GameState {
     }
 
     public void initialize() {
-        grid = new Grid();
+        TileFactory factory = new TileFactory();
+        grid = new Grid(factory);
 
         try {
-            initializePlayers(NUM_PLAYERS, grid.getStartTile());
+            initializePlayers(NUM_PLAYERS, grid.getCentralTile());
         } catch (Exception e) {
             System.out.println("Failed to generate users. Exiting game. ");
             System.out.println(e.getMessage());

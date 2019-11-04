@@ -1,6 +1,6 @@
 package com.armillari.solo.player;
 
-import com.armillari.solo.game.InputAction;
+import com.armillari.solo.grid.DirectionType;
 import com.armillari.solo.grid.Tile;
 
 public class Player {
@@ -20,12 +20,15 @@ public class Player {
         System.out.println(String.format("Player %s has entered the game!", name));
     }
 
-    public void move(InputAction.DirectionType directionType) {
-        System.out.println(name + " is moving!");
+    public void move(DirectionType directionType) {
+        // Explore the given direction.
+        Tile destinationTile = this.currentTile.getNextTile(directionType);
+        this.currentTile = destinationTile;
     }
 
     public void work() {
-        System.out.println(name + " is working!");
+        // Something about the tile determines how much money is made.
+        coins++;
     }
 
     public String getName() {
